@@ -37,4 +37,4 @@ uv run python src/semana1_python/main.py             # generator vs. list race
 row, header, wraps, exhausted, assertion, temporary directory
 
 
-MIT License — datos 100% sintéticos.
+MIT License — proyecto de estudios personales.
