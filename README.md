@@ -37,4 +37,43 @@ uv run python src/semana1_python/main.py             # generator vs. list race
 row, header, wraps, exhausted, assertion, temporary directory
 
 
-MIT License — datos 100% sintéticos, uso educativo. 
+# Week 3 — My first API with FastAPI
+
+I learned how the API world works. It is very interesting because, if you
+think about it, almost everything digital works with APIs.
+
+## What I learned
+
+- **API** — functions that have a path that can be called by a client,
+  in order to check different things: see health status, see holdings from a CSV,
+  or check if a ticker is inside those holdings.
+
+- **Params** — parameters that can live inside an API path, like
+  `/ticker/{ticker}`. You just add a type hint (`ticker: str`) to the function
+  and FastAPI extracts it from the URL automatically.
+
+- **response_model** — a contract: you promise the endpoint returns a
+  `list[Holding]` and FastAPI validates every response against it. I got a
+  real HTTP 500 when I declared the wrong shape — the server would rather
+  fail than lie to the client.
+
+- **Test with APIs** — `TestClient` sends fake requests from inside pytest,
+  without a browser or a port, and you assert on status codes and JSON.
+
+## How to run
+
+```bash
+uv run uvicorn src.semana1_python.api:app --reload --port 8123
+# then open http://127.0.0.1:8123/docs  (interactive docs, auto-generated)
+```
+
+## Vocabulary of the week
+
+API, parameters, endpoint, paths, server, response model, status code
+(the empty list answer is a 200, not a 404)
+
+
+MIT License — datos 100% sintéticos, uso educativo.
+
+
+
