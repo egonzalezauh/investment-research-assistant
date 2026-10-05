@@ -12,3 +12,7 @@ wheels/
 # Cryptography key files
 *.env
 
+# Varios
+salida.txt
+*.jsonl
+
